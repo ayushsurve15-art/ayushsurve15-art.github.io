@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ayush Surve · Full Stack Engineer</title>
+<meta name="description" content="Full Stack Engineer in Pune. Case studies: Walled DLP, MCP Guard and Salary Management, plus experience and skills.">
+<link rel="canonical" href="https://ayushsurve15-art.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 4 7v8c0 7.5 5.1 13.4 12 15 6.9-1.6 12-7.5 12-15V7z' fill='%232747d0'/%3E%3Cpath d='m11 16 3.5 3.5L21.5 12' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ayushsurve15-art.github.io/">
+<meta property="og:title" content="Ayush Surve · Full Stack Engineer">
+<meta property="og:description" content="Full Stack Engineer in Pune. Case studies: Walled DLP, MCP Guard and Salary Management, plus experience and skills.">
+<meta property="og:image" content="https://ayushsurve15-art.github.io/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column of case files; each project is drawn as a request travelling left to right through a checkpoint. */
+:root {
+  --paper: #f5f6f8;
+  --surface: #ffffff;
+  --ink: #131926;
+  --muted: #586274;
+  --line: #dce1e9;
+  --accent: #2747d0;
+  --accent-soft: #e6ebff;
+  --allow: #157a3c;
+  --block: #b42318;
+  --code: #eef1f6;
+  --display: "Familjen Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #0d1117; --surface: #141a23; --ink: #e7eaf0; --muted: #9ba5b5; --line: #262e3b;
+    --accent: #8ea4ff; --accent-soft: #1b2445; --allow: #4ade80; --block: #f87171; --code: #171d27;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #0d1117; --surface: #141a23; --ink: #e7eaf0; --muted: #9ba5b5; --line: #262e3b;
+  --accent: #8ea4ff; --accent-soft: #1b2445; --allow: #4ade80; --block: #f87171; --code: #171d27;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font: 400 16px/1.6 var(--body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 920px; margin: 0 auto; padding-block: 56px 72px; display: grid; gap: 72px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; letter-spacing: -0.01em; }
+p { margin: 0; }
+.label { font: 500 12px/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* Intro */
+.intro { display: grid; gap: 18px; }
+.intro h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 700; line-height: 1.05; }
+.intro .lede { font-size: 1.15rem; color: var(--muted); max-width: 62ch; }
+.intro .lede strong { color: var(--ink); font-weight: 600; }
+.links { display: flex; flex-wrap: wrap; gap: 10px 22px; font: 500 14px var(--mono); }
+
+/* Project */
+.project { display: grid; gap: 28px; border-top: 1px solid var(--line); padding-top: 40px; }
+.project-head { display: grid; gap: 10px; }
+.project-head .meta { display: flex; flex-wrap: wrap; gap: 8px 16px; align-items: baseline; }
+.project h2 { font-size: clamp(1.8rem, 4vw, 2.5rem); font-weight: 700; }
+.tagline { font-size: 1.15rem; max-width: 62ch; }
+.cols { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 40px; align-items: start; }
+.block-text, .wire, .figure { align-content: start; }
+.cols > * { min-width: 0; }
+@media (max-width: 760px) { .cols { grid-template-columns: 1fr; } }
+.block-text { display: grid; gap: 10px; }
+.block-text h3 { font-size: 1.05rem; font-weight: 600; }
+.block-text p { color: var(--muted); max-width: 62ch; }
+
+/* Request path */
+.path { display: grid; gap: 10px; }
+.flow { display: flex; align-items: stretch; gap: 0; overflow-x: auto; padding-bottom: 4px; }
+.node {
+  flex: 1 1 0; min-width: 132px; border: 1px solid var(--line); background: var(--surface);
+  border-radius: 6px; padding: 12px 14px; display: grid; gap: 4px; align-content: start;
+}
+.node b { font: 600 14px/1.3 var(--body); }
+.node span { font: 400 12.5px/1.45 var(--mono); color: var(--muted); }
+.node.check { border: 1.5px solid var(--accent); background: var(--accent-soft); }
+.node.check b { color: var(--accent); }
+.arrow { flex: 0 0 34px; display: grid; place-items: center; color: var(--muted); font: 400 18px var(--mono); }
+@media (max-width: 620px) {
+  .flow { flex-direction: column; overflow-x: visible; }
+  .node { min-width: 0; }
+  .arrow { flex-basis: 26px; transform: rotate(90deg); }
+}
+.decision { display: flex; flex-wrap: wrap; gap: 8px 20px; font: 400 13.5px/1.5 var(--body); color: var(--muted); }
+.decision i { font-style: normal; font-weight: 600; }
+.decision .ok { color: var(--allow); }
+.decision .no { color: var(--block); }
+
+/* Highlights */
+.highlights { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+.highlights li { display: grid; grid-template-columns: 14px 1fr; gap: 12px; align-items: baseline; }
+.highlights li::before { content: ""; width: 7px; height: 7px; border-radius: 1px; background: var(--accent); transform: translateY(-1px); }
+.highlights b { font-weight: 600; }
+.highlights span { color: var(--muted); }
+
+/* Evidence: dialog mock, screenshot, wire findings */
+.figure { display: grid; gap: 8px; margin: 0; }
+.figure figcaption { font: 400 13px/1.5 var(--body); color: var(--muted); }
+.shot { width: 100%; max-width: 100%; height: auto; border: 1px solid var(--line); border-radius: 6px; display: block; }
+.dialog {
+  border: 1px solid var(--line); border-radius: 8px; background: var(--surface); overflow: hidden;
+  box-shadow: 0 10px 30px -18px rgba(19, 25, 38, 0.45);
+}
+.dialog .bar { font: 500 12.5px var(--body); color: var(--muted); padding: 8px 14px; border-bottom: 1px solid var(--line); display: flex; gap: 8px; align-items: center; }
+.dialog .bar::before { content: ""; width: 9px; height: 9px; border-radius: 50%; background: var(--block); opacity: 0.8; }
+.dialog .inner { padding: 16px 18px 18px; display: grid; gap: 12px; }
+.dialog h4 { margin: 0; font: 600 16px/1.3 var(--display); }
+.dialog dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 4px 14px; font-size: 14px; }
+.dialog dt { color: var(--muted); }
+.dialog dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.dialog code { font: 400 13px var(--mono); background: var(--code); padding: 1px 5px; border-radius: 3px; }
+.dialog .btns { display: flex; justify-content: flex-end; gap: 10px; }
+.dialog .btns span { font: 600 13.5px var(--body); padding: 7px 16px; border-radius: 5px; border: 1px solid var(--line); }
+.dialog .btns .go { background: var(--accent); border-color: var(--accent); color: var(--surface); }
+
+.wire { display: grid; gap: 10px; }
+.wire-item { display: grid; grid-template-columns: minmax(0, 1fr); gap: 4px; padding: 12px 14px; background: var(--code); border-radius: 6px; }
+.wire-item code { font: 500 12.5px/1.5 var(--mono); color: var(--ink); overflow-wrap: anywhere; }
+.wire-item p { font-size: 14px; color: var(--muted); }
+
+/* Numbers */
+.numbers { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 6px; overflow: hidden; }
+.numbers div { background: var(--surface); padding: 14px 16px; display: grid; gap: 2px; }
+.numbers strong { font: 600 1.6rem/1.1 var(--display); font-variant-numeric: tabular-nums; }
+.numbers span { font-size: 13px; color: var(--muted); }
+@media (max-width: 620px) { .numbers { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.stack { display: flex; flex-wrap: wrap; gap: 8px; }
+.stack span { font: 400 12.5px var(--mono); padding: 3px 9px; border: 1px solid var(--line); border-radius: 999px; color: var(--muted); background: var(--surface); }
+.repo { font: 500 14px var(--mono); }
+
+footer { border-top: 1px solid var(--line); padding-top: 24px; color: var(--muted); font-size: 14px; display: grid; gap: 6px; }
+
+/* Profile header extras */
+.intro h1 { font-size: clamp(2.6rem, 7vw, 4.2rem); }
+.email { color: var(--ink); user-select: all; }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.toc a { font: 500 13px var(--body); text-decoration: none; color: var(--ink); padding: 5px 12px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+.toc a:hover { border-color: var(--accent); color: var(--accent); }
+.section-intro { display: grid; gap: 6px; margin-bottom: -36px; max-width: 62ch; color: var(--muted); }
+
+/* Resume sections */
+.resume { display: grid; gap: 22px; border-top: 1px solid var(--line); padding-top: 40px; }
+.resume h2 { font-size: clamp(1.5rem, 3.4vw, 2rem); font-weight: 700; }
+.job, .edu { display: grid; gap: 16px; }
+.job-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 4px 20px; }
+.job-head > div { min-width: 0; }
+.job-head h3 { font-size: 1.15rem; font-weight: 600; }
+.org { color: var(--muted); }
+.when { font: 500 13px var(--mono); color: var(--muted); font-variant-numeric: tabular-nums; }
+.work-projects { display: grid; gap: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 6px; padding: 16px 18px; }
+.work-projects dl { margin: 0; display: grid; gap: 4px; }
+.work-projects dt { font-weight: 600; margin-top: 8px; }
+.work-projects dt:first-child { margin-top: 0; }
+.work-projects dt i { font: 400 12.5px var(--mono); color: var(--muted); font-style: normal; margin-left: 6px; }
+.work-projects dd { margin: 0; color: var(--muted); font-size: 15px; max-width: 70ch; }
+.skills { margin: 0; display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 10px 28px; }
+.skills dt { font: 500 12px/1.9 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.skills dd { margin: 0; }
+@media (max-width: 560px) { .skills { grid-template-columns: 1fr; gap: 2px; } .skills dd { margin-bottom: 10px; } }
+
+@media (prefers-reduced-motion: no-preference) {
+  .node.check { animation: hold 2.6s ease-in-out 0.4s 2; }
+  @keyframes hold { 0%, 100% { box-shadow: 0 0 0 0 transparent; } 45% { box-shadow: 0 0 0 5px var(--accent-soft); } }
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header class="intro">
+    <span class="label">Full Stack Engineer · Pune, India</span>
+    <h1>Ayush Surve</h1>
+    <p class="lede">I ship production features end to end, from <strong>React and Next.js</strong> front ends to <strong>Node.js, NestJS and Python</strong> back ends, and I build LLM features like RAG pipelines and LangGraph agents. Two years at Benchmark IT Solutions, plus the open-source projects below: two security tools for AI assistants and a full-stack HR app.</p>
+    <div class="links">
+      <a href="https://github.com/ayushsurve15-art">GitHub</a>
+      <a href="https://linkedin.com/in/ayush-surve-59b24421b">LinkedIn</a>
+      <span class="email">ayushsurve15@gmail.com</span>
+    </div>
+    <nav class="toc" aria-label="Sections">
+      <a href="#walled-dlp">Walled DLP</a>
+      <a href="#mcp-guard">MCP Guard</a>
+      <a href="#salary-management">Salary Management</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+    </nav>
+  </header>
+
+  <p class="section-intro"><span class="label">Selected projects</span><span>The first two are guardrails for AI assistants: each holds a request at the network layer until a person decides. The third is a full-stack web app with careful data handling.</span></p>
+
+  <!-- ============ Walled DLP ============ -->
+  <article class="project" id="walled-dlp">
+    <div class="project-head">
+      <div class="meta"><span class="label">Data loss prevention · Desktop app</span><span class="label">Nov 2026</span></div>
+      <h2>Walled DLP</h2>
+      <p class="tagline">A desktop app that inspects prompts and file uploads sent to ChatGPT and Perplexity, and asks you before anything sensitive leaves your machine. No browser extension.</p>
+    </div>
+
+    <div class="path">
+      <span class="label">Request path</span>
+      <div class="flow" role="img" aria-label="Browser sends to the local Walled DLP proxy, which inspects and asks, then forwards to ChatGPT or Perplexity">
+        <div class="node"><b>Browser</b><span>Chrome or Firefox, unmodified</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><b>System PAC</b><span>routes only the two AI sites</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node check"><b>Local HTTPS proxy</b><span>decrypts, unpacks JSON, forms, multipart; OCR on files</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><b>ChatGPT / Perplexity</b><span>gets the request only after Continue</span></div>
+      </div>
+      <div class="decision"><span><i class="ok">Continue</i> forwards the original bytes</span><span><i class="no">Cancel</i> returns a 403; your text stays in the box to edit</span></div>
+    </div>
+
+    <div class="cols">
+      <div class="block-text">
+        <h3>The problem</h3>
+        <p>People paste contracts, customer lists and screenshots into AI chat tools. The brief was to catch a sensitive marker in prompts and in text, PDF and image uploads, ask the user through a native dialog, and recolour the AI's answers. Halfway through, the rules changed: no browser extension allowed, not even as a helper. So the inspection had to move out of the browser and onto the network.</p>
+      </div>
+      <figure class="figure">
+        <div class="dialog" aria-label="Example of the Walled DLP dialog">
+          <div class="bar">Walled DLP</div>
+          <div class="inner">
+            <h4>Sensitive content detected in a file upload</h4>
+            <dl>
+              <dt>Site</dt><dd>ChatGPT</dd>
+              <dt>File</dt><dd><code>sensitive-screenshot.png</code></dd>
+              <dt>Found in</dt><dd>text in image (OCR)</dd>
+            </dl>
+            <div class="btns"><span>Cancel</span><span class="go">Continue</span></div>
+          </div>
+        </div>
+        <figcaption>What the native dialog shows: which site, which file, and where in it the match was found. It's a desktop window (zenity, kdialog, osascript or Tk), not part of the web page.</figcaption>
+      </figure>
+    </div>
+
+    <div class="cols">
+      <div class="block-text">
+        <h3>How it works</h3>
+        <ul class="highlights">
+          <li><div><b>Scoped interception.</b> <span>A local CA, name-constrained to the monitored domains, and a PAC file that sends only those hosts to the proxy. Everything else goes direct and is never decrypted.</span></div></li>
+          <li><div><b>Content, not endpoints.</b> <span>The proxy unpacks query strings, forms, multipart, nested JSON, JSON inside strings and NDJSON, so drag and drop, paste and attach are all covered.</span></div></li>
+          <li><div><b>Files read three ways.</b> <span>Plain text directly, PDFs with pypdf plus OCR on embedded images (scanned PDFs), and images with RapidOCR, including light text on dark backgrounds.</span></div></li>
+          <li><div><b>Background leaks handled.</b> <span>Analytics and typeahead requests never raise their own dialog. They follow the decision on the real prompt and are withheld otherwise.</span></div></li>
+          <li><div><b>Fails closed.</b> <span>The PAC is installed as a data: URL, so if the app stops, the sites fail to load instead of going uninspected. Unknown upload destinations are refused.</span></div></li>
+          <li><div><b>Answer recolouring.</b> <span>A style block streamed into each page as it loads, with a CSP nonce only where the site needs one.</span></div></li>
+        </ul>
+      </div>
+      <div class="block-text">
+        <h3>What I found on the wire</h3>
+        <div class="wire">
+          <div class="wire-item"><code>wss://suggest.perplexity.ai  {"q": "explain WALLED_SENS…"}</code><p>Perplexity sends every keystroke to its suggestion service before you press Enter. Frames carrying the marker are dropped.</p></div>
+          <div class="wire-item"><code>POST /rest/event/analytics  "queryStr": …</code><p>A copy of the question goes to analytics before the question itself, so it has to wait for your decision too.</p></div>
+          <div class="wire-item"><code>PUT …oaiusercontent.com/files/&lt;id&gt;/raw</code><p>ChatGPT uploads straight to storage and retries on failure. The file name comes from the earlier create-upload request, matched by size.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="numbers">
+      <div><strong>109</strong><span>Python tests, incl. real TLS</span></div>
+      <div><strong>13</strong><span>end-to-end tests in real Chrome</span></div>
+      <div><strong>2</strong><span>sites, signed in and out</span></div>
+      <div><strong>0</strong><span>browser extensions</span></div>
+    </div>
+
+    <div class="stack"><span>Python 3.12</span><span>asyncio</span><span>TLS / X.509</span><span>HTTP/1.1 + WebSocket</span><span>pypdf</span><span>RapidOCR</span><span>Tkinter</span><span>Chrome DevTools Protocol</span></div>
+    <a class="repo" href="https://github.com/ayushsurve15-art/Walled-DLP">github.com/ayushsurve15-art/Walled-DLP</a>
+  </article>
+
+  <!-- ============ MCP Guard ============ -->
+  <article class="project" id="mcp-guard">
+    <div class="project-head">
+      <div class="meta"><span class="label">AI agent safety · Desktop app</span><span class="label">Nov 2026</span></div>
+      <h2>MCP Guard</h2>
+      <p class="tagline">Approve or block every MCP tool call Claude makes, before it runs. Works with Claude Desktop and with Claude on the web.</p>
+    </div>
+
+    <div class="path">
+      <span class="label">Request path</span>
+      <div class="flow" role="img" aria-label="Claude sends a tool call to MCP Guard, which asks the user, then forwards it to the real MCP server">
+        <div class="node"><b>Claude</b><span>Desktop (stdio) or Web (remote connector)</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node check"><b>Proxy or gateway</b><span>holds each tools/call; other traffic keeps flowing</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><b>Daemon + popup</b><span>rules, Allow / Block, audit log</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><b>Real MCP server</b><span>sees the call only if allowed</span></div>
+      </div>
+      <div class="decision"><span><i class="ok">Allow</i> forwards the call byte for byte</span><span><i class="no">Block</i> never reaches the server; Claude gets a clear denial</span></div>
+    </div>
+
+    <div class="cols">
+      <div class="block-text">
+        <h3>The problem</h3>
+        <p>MCP lets Claude write files, run commands and call APIs. Most clients only ask once per tool, if at all. MCP Guard sits inside the MCP connection itself, acting as the server to Claude and the client to the real server, so it can hold a single call, show exactly what it will do, and let you decide.</p>
+        <h3 style="margin-top:14px">How it works</h3>
+        <ul class="highlights">
+          <li><div><b>Transparent stdio proxy.</b> <span>One command rewrites Claude Desktop's config so each server runs behind the proxy. Undo restores the original entries exactly.</span></div></li>
+          <li><div><b>HTTP gateway for Claude Web.</b> <span>Supports Streamable HTTP and the older HTTP+SSE transport, reached through a tunnel because claude.ai calls connectors from Anthropic's cloud.</span></div></li>
+          <li><div><b>One popup per call.</b> <span>Simultaneous calls each get their own window and decision. Cancelling in Claude closes the popup.</span></div></li>
+          <li><div><b>Safe defaults.</b> <span>No answer in 120 s blocks the call, a dead daemon blocks every call, and the daemon API is loopback-only behind a token.</span></div></li>
+        </ul>
+      </div>
+      <figure class="figure">
+        <img class="shot" src="assets/mcp-guard-popup.png" alt="MCP Guard popup asking whether Claude may call filesystem write_file, showing the arguments and Block and Allow buttons" width="647" height="593">
+        <figcaption>The real approval popup: server, tool, the tool's own risk hint, full arguments, and a countdown to an automatic Block.</figcaption>
+      </figure>
+    </div>
+
+    <div class="numbers">
+      <div><strong>56</strong><span>tests on real processes and sockets</span></div>
+      <div><strong>3</strong><span>front ends: stdio, HTTP, SSE</span></div>
+      <div><strong>1</strong><span>dependency (aiohttp)</span></div>
+      <div><strong>120 s</strong><span>until an unanswered call blocks</span></div>
+    </div>
+
+    <div class="stack"><span>Python 3.10+</span><span>asyncio</span><span>JSON-RPC 2.0</span><span>Model Context Protocol</span><span>aiohttp</span><span>Server-Sent Events</span><span>Tkinter</span></div>
+    <a class="repo" href="https://github.com/ayushsurve15-art/Mcp-Guard">github.com/ayushsurve15-art/Mcp-Guard</a>
+  </article>
+
+  <!-- ============ Salary Management ============ -->
+  <article class="project" id="salary-management">
+    <div class="project-head">
+      <div class="meta"><span class="label">Full-stack web app · HR</span><span class="label">Oct 2026</span></div>
+      <h2>Salary Management</h2>
+      <p class="tagline">A web app that replaces an HR manager's shared Excel workbook for 10,000 employees across ten countries: find and edit people, record salary changes, and see how pay compares by country, department and role.</p>
+    </div>
+
+    <div class="path">
+      <span class="label">Request path</span>
+      <div class="flow" role="img" aria-label="React client calls the Express API, which passes through validation, services and repositories to SQLite">
+        <div class="node"><b>React client</b><span>MUI, TanStack Query, filters kept in the URL</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><b>Express 5 API</b><span>routes, controllers, Zod validation</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node check"><b>Services</b><span>business rules, transactions, version checks</span></div>
+        <div class="arrow" aria-hidden="true">→</div>
+        <div class="node"><b>SQLite</b><span>repositories hold all SQL; WAL mode, migrations</span></div>
+      </div>
+      <div class="decision"><span><i class="ok">Matching version</i> saves the change</span><span><i class="no">Stale version</i> gets a 409: "changed by someone else"</span></div>
+    </div>
+
+    <div class="cols">
+      <div class="block-text">
+        <h3>How it works</h3>
+        <ul class="highlights">
+          <li><div><b>Money done carefully.</b> <span>Salaries are integer minor units with an ISO 4217 code. Amounts in different currencies are never added, averaged or compared.</span></div></li>
+          <li><div><b>Salary history.</b> <span>Every change has a reason and an effective date. Back-dated changes are allowed, and the current salary always follows the latest effective date.</span></div></li>
+          <li><div><b>Safe concurrent edits.</b> <span>Each save carries the record's version, so the second of two editors gets a clear conflict instead of silently overwriting the first.</span></div></li>
+          <li><div><b>Pay insights.</b> <span>Headcount, median and 25th/75th percentiles per country, then per department and job title within a currency, plus a salary histogram.</span></div></li>
+          <li><div><b>Deterministic seed.</b> <span>10,000 realistic employees in under a second, identical on every run, inserted in one transaction.</span></div></li>
+        </ul>
+      </div>
+      <div class="block-text">
+        <h3>What I measured</h3>
+        <div class="wire">
+          <div class="wire-item"><code>ORDER BY currency ASC, salary_minor DESC</code><p>Mixed sort directions stopped SQLite from using the (currency, salary) index. Matching them let it walk the index backwards: 1.5 ms down to 0.04 ms.</p></div>
+          <div class="wire-item"><code>GET /api/employees?search=patel  → 10 ms</code><p>Every list and insights endpoint answers in 29 ms or less (median, production build) against 10,000 employees and 26,536 history rows.</p></div>
+          <div class="wire-item"><code>npm run seed  → 0.37–0.67 s</code><p>About 36,500 inserts, generated in memory first and written with two prepared statements inside a single transaction.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="numbers">
+      <div><strong>183</strong><span>tests: 116 server, 67 client</span></div>
+      <div><strong>10,000</strong><span>employees, 10 countries</span></div>
+      <div><strong>9</strong><span>currencies, never mixed</span></div>
+      <div><strong>1</strong><span>Docker container serves it all</span></div>
+    </div>
+
+    <div class="stack"><span>TypeScript</span><span>React 19</span><span>Vite</span><span>MUI</span><span>TanStack Query</span><span>Node.js</span><span>Express 5</span><span>Zod</span><span>SQLite</span><span>Vitest</span><span>Docker</span><span>GitHub Actions</span></div>
+    <a class="repo" href="https://github.com/ayushsurve15-art/Salary-Management">github.com/ayushsurve15-art/Salary-Management</a>
+  </article>
+
+  <!-- ============ Experience ============ -->
+  <section class="resume" id="experience">
+    <h2>Experience</h2>
+    <div class="job">
+      <div class="job-head">
+        <div><h3>Associate Software Engineer</h3><p class="org">Benchmark IT Solutions, Pune</p></div>
+        <span class="when">Aug 2024 – present</span>
+      </div>
+      <ul class="highlights">
+        <li><div><span>Build full-stack features across React front ends and Node.js/NestJS back ends for several client products, and design their REST APIs and PostgreSQL/MySQL schemas.</span></div></li>
+        <li><div><span>Improved performance with async refactoring, SQL query tuning, Redis caching and Redis-backed sessions.</span></div></li>
+        <li><div><span>Integrated Keycloak (OAuth 2.0 / OIDC SSO) and HashiCorp Vault; ship Docker services through GitLab CI/CD.</span></div></li>
+        <li><div><span>Own incident triage for my services: find the root cause of production issues and ship the fix.</span></div></li>
+        <li><div><span>Build AI features in Python, including LangGraph agents and RAG pipelines on LangChain and PGVector.</span></div></li>
+      </ul>
+      <div class="work-projects">
+        <span class="label">Client projects</span>
+        <dl>
+          <dt>Saigon <i>AI assistant platform</i></dt>
+          <dd>LangGraph agent with intent routing and Redis-backed state; hybrid RAG over PGVector and contract metadata, filtered per tenant; Kafka ingestion with OCR, LLM metadata extraction and a dead-letter queue; Redis Streams chat service handling 20 messages in parallel.</dd>
+          <dt>BITS Operational Portal <i>Jan 2026 – present</i></dt>
+          <dd>React dashboards on a NestJS/MySQL back end. AI invoice extraction (FastAPI, PaddleOCR, PyMuPDF, GPT-4o JSON mode) that turns invoices into GST, IRN and HSN line items, and email-to-ticket automation with LLM routing and dedup.</dd>
+          <dt>JunkLugger <i>Aug 2025 – Jan 2026</i></dt>
+          <dd>Modular Node.js/TypeScript back end with JWT auth, PostgreSQL and Prisma, versioned and documented REST APIs.</dd>
+          <dt>SiteImpact <i>Aug 2024 – Aug 2025</i></dt>
+          <dd>Node.js/NestJS services and SQL tuning for a high-volume, multi-client analytics platform.</dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ Skills ============ -->
+  <section class="resume" id="skills">
+    <h2>Skills</h2>
+    <dl class="skills">
+      <dt>Languages</dt><dd>TypeScript, JavaScript, Python (asyncio), SQL</dd>
+      <dt>Front end</dt><dd>React, Next.js, responsive UI, REST integration</dd>
+      <dt>Back end</dt><dd>Node.js, NestJS, Express, FastAPI, Keycloak, JWT, OAuth 2.0</dd>
+      <dt>Data</dt><dd>PostgreSQL, PGVector, MySQL, MongoDB, Redis, SQLite, Prisma</dd>
+      <dt>Infrastructure</dt><dd>Docker, Kafka, MinIO, GitLab CI/CD, GitHub Actions, Vault, Linux</dd>
+      <dt>AWS</dt><dd>ECS, ECR, ALB, Lambda, API Gateway, S3, Bedrock, Bedrock AgentCore</dd>
+      <dt>AI</dt><dd>LangGraph, LangChain, RAG, vector search, OpenAI, Bedrock, Gemini, OCR, Claude Code, Devin</dd>
+      <dt>Security</dt><dd>TLS and X.509, HTTPS interception, MCP, JSON-RPC</dd>
+    </dl>
+  </section>
+
+  <!-- ============ Education ============ -->
+  <section class="resume" id="education">
+    <h2>Education and certifications</h2>
+    <div class="edu">
+      <div class="job-head">
+        <div><h3>B.E., Finolex Academy of Management and Technology</h3><p class="org">Ratnagiri · CGPA 8.36 / 10</p></div>
+        <span class="when">2020 – 2024</span>
+      </div>
+      <ul class="highlights">
+        <li><div><span>Microsoft Azure AI Fundamentals (AI-900)</span></div></li>
+        <li><div><span>Deploy FastAPI on AWS with Docker: ECR, ECS and Application Load Balancer (course)</span></div></li>
+        <li><div><span>AWS Bedrock: Lambda, API Gateway, S3, RAG, AgentCore and LangChain (course)</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    <p>Every project above comes with a README, design documents and CI on GitHub Actions.</p>
+    <p>Ayush Surve · <a href="https://github.com/ayushsurve15-art">GitHub</a> · <a href="https://linkedin.com/in/ayush-surve-59b24421b">LinkedIn</a></p>
+  </footer>
+</div>
+
+</body>
+</html>
